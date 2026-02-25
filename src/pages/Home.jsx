@@ -40,7 +40,7 @@ return (
             key={cat}
             onClick={() => SetCategoria(cat)}
             style={{marginRight: '5px',
-                backgroundColor: categoria === cat ? 'lightblue' : 'black'
+                backgroundColor: categoria === cat ? '#e94560' : '#0f3460'
             }}
             >
                  {cat}

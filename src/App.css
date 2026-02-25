@@ -8,9 +8,9 @@ body {
     background-color: #1a1a2e;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
-/* HEADER */
 .header {
     background-color: #16213e;
     padding: 15px 30px;
@@ -19,21 +19,20 @@ body {
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 100;
 }
 
-/* LAYOUT PRINCIPAL */
 .container {
     display: flex;
     gap: 20px;
     padding: 20px;
 }
 
-/* LADO ESQUERDO - PRODUTOS */
 .produtos-lado {
     flex: 3;
+    min-width: 0;
 }
 
-/* FILTROS */
 .botoes {
     margin-bottom: 20px;
     display: flex;
@@ -50,7 +49,6 @@ body {
     font-weight: bold;
 }
 
-/* INPUT BUSCA */
 input {
     width: 100%;
     padding: 10px;
@@ -62,14 +60,12 @@ input {
     font-size: 16px;
 }
 
-/* GRID PRODUTOS */
 .home {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
-/* CARD PRODUTO */
 .card {
     background-color: #16213e;
     border-radius: 10px;
@@ -101,7 +97,6 @@ input {
     background-color: #e94560;
 }
 
-/* LADO DIREITO - CARRINHO */
 .cart {
     flex: 1;
     background-color: #16213e;
@@ -135,6 +130,7 @@ input {
     cursor: pointer;
     width: 100%;
 }
+
 .product-page {
     display: flex;
     gap: 40px;
@@ -184,6 +180,40 @@ input {
     font-weight: bold;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
+    .home {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
 
+    .card {
+        width: 100%;
+    }
 
+    .product-page {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .product-page img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .cart {
+        position: static;
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}
